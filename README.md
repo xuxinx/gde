@@ -11,7 +11,7 @@ go file:
 package main
 
 func main() {
-    gde.SetEnv("./dev_env")
+    gde.Setenv("./dev_env")
     // do something
 }
 ```

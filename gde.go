@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func SetEnv(file string) {
+func Setenv(file string) {
 	bs, err := exec.Command("bash", "-c", fmt.Sprintf("source %s; echo '<<<ENVIRONMENT>>>'; env", file)).CombinedOutput()
 	if err != nil {
 		panic(err)
