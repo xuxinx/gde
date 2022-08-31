@@ -10,6 +10,9 @@ import (
 )
 
 func Setenv(file string) {
+	if _, err := os.Stat(file); err != nil {
+		panic(err)
+	}
 	bs, err := exec.Command("bash", "-c", fmt.Sprintf("source %s; echo '<<<ENVIRONMENT>>>'; env", file)).CombinedOutput()
 	if err != nil {
 		panic(err)
